@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sign.css" />
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-content">
+        <h2>Sign in</h2>
+        <form id="form_login" method="post" onsubmit="return singIn()">
+          <input type="text" name="username" placeholder="username" />
+          <input type="password" name="password" placeholder="password" />
+          <br />
+          <button type="submit">Sign in</button>
+        </form>
+        <div class="redirect"><a href="register.html">Create Account</a></div>
+      </div>
+    </div>
+  </body>
+  <script src="src/validation.js"></script>
+</html>

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;1,400&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.content {
+  display: flex;
+}
+
+.banner {
+  text-align: left;
+  background: #010011 url(../img/header.jpg)
+    no-repeat fixed;
+  background-size: cover;
+  height: 750px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.banner img {
+  padding-top: 20px;
+  height: 40px;
+}
+
+.title {
+  margin: 0;
+  font-size: 80px;
+  padding-top: 220px;
+  letter-spacing: 0.04em;
+}
+
+.right {
+  flex: 1;
+}
+
+.center {
+  flex: auto;
+}
+
+.left {
+  margin-top: 30px;
+}
+
+.left label {
+  margin-right: 10px;
+}
+
+.left button a {
+  color: black;
+}
+
+.navbar {
+  list-style: none;
+}
+
+.navbar li {
+  float: left;
+  margin-left: 15px;
+  padding: 20px 10px;
+}
+
+.about {
+  margin-top: 60px;
+}
+
+.about img {
+  height: 500px;
+  filter: drop-shadow(0px 8px 5px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+}
+
+.about-text {
+  width: 50%;
+  float: right;
+}
+
+.about p {
+  margin: 30px auto;
+}
+
+.curiosity {
+  margin-top: 50px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+}
+
+.content-h3 {
+  width: 33.3%;
+  font-weight: 400;
+}
+
+
+.indications {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px
+}
+
+.indications img {
+  height: 200px;
+}
+
+.indications-text {
+  width: 30%;
+  margin: auto;
+}
+
+.curiosity img {
+  height: 200px;
+}
+
+.curiosity-text {
+  width: 30%;
+  margin: auto;
+}
+
+.indications-text a:hover{
+  filter: drop-shadow(3px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.h3-selected {
+  width: 33.3%;
+  float: left;
+}
+
+.footer {
+  text-align: center;
+  background-color: #010011;
+  height: 90px;
+}
+
+.footer h4 {
+  margin: 0;
+  padding-top: 40px;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+label:hover {
+  border-bottom: 3px solid rgb(62, 238, 179);
+}
+
+button {
+  background-color: rgb(62, 238, 179);
+  font-family: "Raleway";
+  border: none;
+  padding: 8px 10px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: rgb(143, 255, 218);
+}

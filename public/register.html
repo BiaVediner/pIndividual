@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sign.css" />
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-content">
+        <h2>Sign up</h2>
+      <form id="form_register" method="post" onsubmit="return comparePassword()">
+          <input type="text" name="username" placeholder="username">
+          <input type="email" name="email" placeholder="email address">
+          <input type="password" id="in_password" name="password" placeholder="password">
+          <input type="password" id="in_password_confirmation" placeholder="confirm password">
+          <br>
+          <div id="div_err" class="invalid"></div>
+          <button type="submit">Create account</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="src/validation.js"></script>
+</html>

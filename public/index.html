@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/jupiter.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="container">
+        <div class="content">
+          <div class="right">
+            <div>
+              <img src="img/logo.svg" />
+            </div>
+          </div>
+          <div class="center">
+            <ul class="navbar">
+              <li><a href="#about-section"><label>About</label></a></li>
+              <li><a href="#curiosity-section"><label>Curiosity</label></a></li>
+              <li><a href="#indications-section"><label>Indications</label></a></li>
+            </ul>
+          </div>
+          <div class="left">
+            <div>
+              <a href="login.html"><label>Login</label></a>
+              <button><a href="register.html">Register</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h1 class="title">The Unknown</h1>
+        <h3>
+          Curiosities about the wonderful world of physics, mathematics and
+          astronomy
+        </h3>
+      </div>
+    </div>
+
+    <div class="about" id="about-section">
+      <div class="container">
+        <img src="img/bubble-nebula.jpg" />
+        <div class="about-text">
+          <p>
+            We developed a website that would take away all the curiosity that
+            we, lovers of physic and of the unkown, have! A website where we
+            could look at the art existing in the galaxy, and where you can have
+            indications of blogs and youtube chanels where you can learn about
+            crazy and brain cracking stuff! And besides that, we also developed
+            a bunch of games so you can train your brain, nothing better than
+            that right?
+          </p>
+          <p>
+            If you identifies with what we show on this website, why don't you
+            register and becomes a part of our family? Then you will receive all
+            the news from our website, and will be able to play the games
+            developed by our time. With your punctuation you can win a buch of
+            prizes, stay tune to see the prizes that we give!
+            <br /><br />
+            <button>Register</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="curiosity" id="curiosity-section">
+      <div class="container">
+        <div class="content">
+          <h3
+            class="h3-selected"
+            id="theme_paradoxes"
+            onclick="get_text_curiosity('paradoxes')"
+          >
+            <label>Paradoxes</label>
+          </h3>
+          <h3
+            class="content-h3"
+            id="theme_theories"
+            onclick="get_text_curiosity('theories')"
+          >
+            <label>Theories</label>
+          </h3>
+          <h3
+            class="content-h3"
+            id="theme_basic_concepts"
+            onclick="get_text_curiosity('basic_concepts')"
+          >
+            <label>Basic Concepts</label>
+          </h3>
+        </div>
+        <div class="content">
+          <div id="curiosity-content1" class="curiosity-text">
+            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
+              <img src="img/dark-matter.jpg"/>
+            </a>
+            <p>
+              <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+            </p>
+          </div>
+          <div id="curiosity-content2" class="indications-text">
+            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
+              <img src="img/dark-matter.jpg"/>
+            </a>
+            <p>
+              Dark Matter is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+            </p>
+          </div>
+          <div id="curiosity-content3" class="indications-text">
+            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
+              <img src="img/dark-matter.jpg"/>
+            </a>
+            <p>
+              Dark Matter is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indications" id="indications-section">
+      <div class="container">
+        <div class="content">
+          <h3
+            class="h3-selected"
+            id="theme_book"
+            onclick="get_text_indication('book')"
+          >
+            <label>Books</label>
+          </h3>
+          <h3
+            class="content-h3"
+            id="theme_youtube_channel"
+            onclick="get_text_indication('youtube_channel')"
+          >
+            <label>Youtube Channel</label>
+          </h3>
+          <h3
+            class="content-h3"
+            id="theme_movie"
+            onclick="get_text_indication('movie')"
+          >
+            <label>Movies</label>
+          </h3>
+        </div>
+        <div class="content">
+          <div id="indication-content1" class="indications-text">
+            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
+              <img src="img/dark-matter.jpg"/>
+            </a>
+            <p>
+              <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+            </p>
+          </div>
+          <div id="indication-content2" class="indications-text">
+            <a href="https://www.amazon.com.br/Sette-brevi-lezioni-fisica-Rovelli/dp/8845929256">
+              <img src="img/Sette-brevi-lezioni-di-fisica.jpg"/>
+            </a>
+            <p>
+              <i>Sette brevi lezioni di fisica</i> explains 7 complex physics concepts in a simple and brief way, in less than 100 pages
+            </p>
+          </div>
+          <div id="indication-content3" class="indications-text">
+            <a href="https://www.amazon.com.br/gp/product/B00MLNBIT6/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i3">
+              <img src="img/universe-in-your-hand.jpg"/>
+            </a>
+            <p>
+              <i>The Universe in your hand</i> a wild tour through the reaches of time and space, from the interior of a proton to the Big Bang to the rough suburbs of a black hole.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <h4>
+          Developed By
+          <a href="https://github.com/BiaVediner">Bianca Vediner</a>
+        </h4>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var books_indications = [
+    `<a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
+      <img src="img/dark-matter.jpg"/>
+    </a>
+    <p>
+      <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+    </p>`,
+    `<a href="https://www.amazon.com.br/Sette-brevi-lezioni-fisica-Rovelli/dp/8845929256">
+      <img src="img/Sette-brevi-lezioni-di-fisica.jpg"/>
+    </a>
+    <p>
+      <i>Sette brevi lezioni di fisica</i> explains 7 complex physics concepts in a simple and brief way, in less than 100 pages
+    </p>`,
+
+    `<a href="https://www.amazon.com.br/gp/product/B00MLNBIT6/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i3">
+      <img src="img/universe-in-your-hand.jpg"/>
+    </a>
+    <p>
+      <i>The Universe in your hand</i> a wild tour through the reaches of time and space, from the interior of a proton to the Big Bang to the rough suburbs of a black hole.
+    </p>`,
+  ];
+
+  var youtube_channel_indications = [
+    `<a href="https://www.youtube.com/c/CienciaTodoDia">
+      <img src="img/ciencia-todo-dia-channel.svg"/>
+    </a>
+    <p>
+      An awesome youtube channel focused on explaning theories,paradoxes and every concept of physics and technology that exists
+    </p>`,
+    `<a href="https://www.youtube.com/user/fecastanhari">
+      <img src="img/nostalgia.svg"/>
+    </a>
+    <p>
+      Nostalgia is a channel that brings short documentaries on various subjects from historical subjects to scientific explanations
+    </p>`,
+
+    `<a href="https://www.youtube.com/user/nerdologia">
+      <img src="img/nerdologia.svg"/>
+    </a>
+    <p>
+      This youtube channel addresses interesting and diverse topics such as the physics of the film Interstellar
+    </p>`,
+  ];
+
+  var movies_indications = [
+    `<a href="https://www.netflix.com/title/80117799#:~:text=Uma%20linguista%20encarregada%20de%20encontrar,vida%20e%20a%20do%20mundo.&text=Assista%20o%20quanto%20quiser.">
+      <img src="img/arrival.jpg"/>
+    </a>
+    <p>
+
+    </p>`,
+    `<a href="https://globoplay.globo.com/interestelar/t/PFrLHDBYHY/">
+      <img src="img/interstellar.jpg"/>
+    </a>
+    <p>
+    <i>Interstellar</i> addresses issues such as wormholes, gravitational dilation of time, unified field theory, black holes, and many other. 
+    </p>`,
+
+    `<a href="https://www.youtube.com/user/nerdologia">
+      <img src="img/nerdologia.svg"/>
+    </a>
+    <p>
+      This youtube channel addresses interesting and diverse topics such as the physics of the film Interstellar
+    </p>`,
+  ];
+
+  function get_text_curiosity(theme_params) {
+    var themes = ["paradoxes", "theories", "basic_concepts"];
+
+    for (var counter = 0; counter < themes.length; counter++) {
+      var id_theme = document.getElementById(`theme_${themes[counter]}`);
+      if (id_theme.classList.contains("h3-selected")) {
+        id_theme.classList.remove("h3-selected");
+        id_theme.classList.add("content-h3");
+      }
+    }
+
+    document
+      .getElementById(`theme_${theme_params}`)
+      .classList.remove("content-h3");
+    document
+      .getElementById(`theme_${theme_params}`)
+      .classList.add("h3-selected");
+
+    //alterar os campos de textos que irão aparecer
+  }
+
+  function get_text_indication(theme_params) {
+    var themes = ["book", "youtube_channel", "movie"];
+
+    for (var counter = 0; counter < themes.length; counter++) {
+
+      var id_theme = document.getElementById(`theme_${themes[counter]}`);
+      if (id_theme.classList.contains("h3-selected")) {
+        id_theme.classList.remove("h3-selected");
+        id_theme.classList.add("content-h3");
+      }
+    }
+
+    document
+      .getElementById(`theme_${theme_params}`)
+      .classList.remove("content-h3");
+    document
+      .getElementById(`theme_${theme_params}`)
+      .classList.add("h3-selected");
+
+    switch (theme_params) {
+      case 'youtube_channel':
+        change_text(youtube_channel_indications)
+        break;
+      case 'book':
+        change_text(books_indications)
+        break;
+      case 'movie':
+        change_text(movies_indications)
+        break;
+    }
+  }
+
+  function change_text(arr) {
+    for(var counter = 0; counter < arr.length; counter++) {
+        var id_indications = document.getElementById(`indication-content${counter + 1}`)
+
+        id_indications.innerHTML = arr[counter]
+      }
+  }
+</script>

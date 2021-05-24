@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="header-games">
+      <div class="container">
+        <div class="content">
+          <div class="left">
+            <input type="checkbox" id="check" />
+            <label for="check" class="nav-label">Profile</label>
+            <a href="games_hub.html"><label>Games</label></a>
+            <div class="nav">
+              <ul>
+                <li><img src="img/woman.svg"></li>
+                <hr>
+                <li>Hey, <b id="b_user"></b></li>
+                <li>Your Ponctuation: 0</li>
+                <li>OMG! You are a genius</li>
+                <li class="last-li" onclick="singOut()">Sign Out</li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <div class="logo">
+              <h2>Game's Station</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-one-context">
+      <div class="container">
+        <div class="content">
+          <div class="content-left">
+            <h2>Einstein's Riddle</h2>
+            <p>
+              <i>
+                "The important thing is not to stop questioning. Curiosity has
+                its own reason for existing." - Albert Einstein
+              </i>
+            </p>
+            <p>
+              The legend says that this problem was created by Albert Einstein
+              in the last century, and Einstein said that only 2% of the world
+              could solve it.
+            </p>
+          </div>
+          <div class="content-right">
+            <p>
+              There are five houses of different colors next to each other where
+              a man of unique nationality lives. Each man has an exclusive
+              favorite drink, a distinct favorite brand of cigarettes and keeps
+              specific pets. Use all the clues below to fill the grid and answer
+              the question: "Who owns the fish?"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-one">
+      <div class="container">
+        <div class="content-game">
+          <div class="content">
+            <div class="labels">
+              <hr class="first-vertical" />
+              <p>Color</p>
+              <p>Nationality</p>
+              <p>Drink</p>
+              <p>Cigarette</p>
+              <p>Pet</p>
+            </div>
+
+            <div class="house">
+              <h3 class="tittle">1° House</h3>
+              <hr />
+              <hr class="vertical" />
+              <div id="house1" class="house-elements">
+                <select
+                  id="select_color_house1"
+                  onchange="validate_answer(1, 'color')"
+                >
+                  <option value=""></option>
+                  <option value="#6ED4EB">Blue</option>
+                  <option value="#5FEF98">Green</option>
+                  <option value="#EFEA70">Yellow</option>
+                  <option value="#F36D6D">Red</option>
+                  <option value="White">White</option>
+                </select>
+                <br />
+                <select
+                  id="select_nationality_house1"
+                  onchange="validate_answer(1, 'nationality')"
+                >
+                  <option value=""></option>
+                  <option value="British">British</option>
+                  <option value="German">German</option>
+                  <option value="Danish">Danish</option>
+                  <option value="Swedish">Swedish</option>
+                  <option value="Norwegian">Norwegian</option>
+                </select>
+                <br />
+                <select
+                  id="select_drink_house1"
+                  onchange="validate_answer(1, 'drink')"
+                >
+                  <option value=""></option>
+                  <option value="Water">Water</option>
+                  <option value="Coffe">Coffe</option>
+                  <option value="Beer">Beer</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Tea">Tea</option>
+                </select>
+                <br />
+                <select
+                  id="select_cigarette_house1"
+                  onchange="validate_answer(1, 'cigarette')"
+                >
+                  <option value=""></option>
+                  <option value="Blends">Blends</option>
+                  <option value="Dunhill">Dunhill</option>
+                  <option value="Pall Mall">Pall Mall</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Blue Master">Blue Master</option>
+                </select>
+                <br />
+                <select
+                  id="select_animals_house1"
+                  onchange="validate_answer(1, 'animals')"
+                >
+                  <option value=""></option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Horses">Horses</option>
+                  <option value="Birds">Birds</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Cats">Cats</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="house">
+              <h3 class="tittle">2° House</h3>
+              <hr />
+              <hr class="vertical" />
+              <div id="house2" class="house-elements">
+                <select
+                  id="select_color_house2"
+                  onchange="validate_answer(2, 'color')"
+                >
+                  <option value=""></option>
+                  <option value="#6ED4EB">Blue</option>
+                  <option value="#5FEF98">Green</option>
+                  <option value="#EFEA70">Yellow</option>
+                  <option value="#F36D6D">Red</option>
+                  <option value="White">White</option>
+                </select>
+                <br />
+                <select
+                  id="select_nationality_house2"
+                  onchange="validate_answer(2, 'nationality')"
+                >
+                  <option value=""></option>
+                  <option value="British">British</option>
+                  <option value="German">German</option>
+                  <option value="Danish">Danish</option>
+                  <option value="Swedish">Swedish</option>
+                  <option value="Norwegian">Norwegian</option>
+                </select>
+                <br />
+                <select
+                  id="select_drink_house2"
+                  onchange="validate_answer(2, 'drink')"
+                >
+                  <option value=""></option>
+                  <option value="Water">Water</option>
+                  <option value="Coffe">Coffe</option>
+                  <option value="Beer">Beer</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Tea">Tea</option>
+                </select>
+                <br />
+                <select
+                  id="select_cigarette_house2"
+                  onchange="validate_answer(2, 'cigarette')"
+                >
+                  <option value=""></option>
+                  <option value="Blends">Blends</option>
+                  <option value="Dunhill">Dunhill</option>
+                  <option value="Pall Mall">Pall Mall</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Blue Master">Blue Master</option>
+                </select>
+                <br />
+                <select
+                  id="select_animals_house2"
+                  onchange="validate_answer(2, 'animals')"
+                >
+                  <option value=""></option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Horses">Horses</option>
+                  <option value="Birds">Birds</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Cats">Cats</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="house">
+              <h3 class="tittle">3° House</h3>
+              <hr />
+              <hr class="vertical" />
+              <div id="house3" class="house-elements">
+                <select
+                  id="select_color_house3"
+                  onchange="validate_answer(3, 'color')"
+                >
+                  <option value=""></option>
+                  <option value="#6ED4EB">Blue</option>
+                  <option value="#5FEF98">Green</option>
+                  <option value="#EFEA70">Yellow</option>
+                  <option value="#F36D6D">Red</option>
+                  <option value="White">White</option>
+                </select>
+                <br />
+                <select
+                  id="select_nationality_house3"
+                  onchange="validate_answer(3, 'nationality')"
+                >
+                  <option value=""></option>
+                  <option value="British">British</option>
+                  <option value="German">German</option>
+                  <option value="Danish">Danish</option>
+                  <option value="Swedish">Swedish</option>
+                  <option value="Norwegian">Norwegian</option>
+                </select>
+                <br />
+                <select
+                  id="select_drink_house3"
+                  onchange="validate_answer(3, 'drink')"
+                >
+                  <option value=""></option>
+                  <option value="Water">Water</option>
+                  <option value="Coffe">Coffe</option>
+                  <option value="Beer">Beer</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Tea">Tea</option>
+                </select>
+                <br />
+                <select
+                  id="select_cigarette_house3"
+                  onchange="validate_answer(3, 'cigarette')"
+                >
+                  <option value=""></option>
+                  <option value="Blends">Blends</option>
+                  <option value="Dunhill">Dunhill</option>
+                  <option value="Pall Mall">Pall Mall</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Blue Master">Blue Master</option>
+                </select>
+                <br />
+                <select
+                  id="select_animals_house3"
+                  onchange="validate_answer(3, 'animals')"
+                >
+                  <option value=""></option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Horses">Horses</option>
+                  <option value="Birds">Birds</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Cats">Cats</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="house">
+              <h3 class="tittle">4° House</h3>
+              <hr />
+              <hr class="vertical" />
+              <div id="house4" class="house-elements">
+                <select
+                  id="select_color_house4"
+                  onchange="validate_answer(4, 'color')"
+                >
+                  <option value=""></option>
+                  <option value="#6ED4EB">Blue</option>
+                  <option value="#5FEF98">Green</option>
+                  <option value="#EFEA70">Yellow</option>
+                  <option value="#F36D6D">Red</option>
+                  <option value="White">White</option>
+                </select>
+                <br />
+                <select
+                  id="select_nationality_house4"
+                  onchange="validate_answer(4, 'nationality')"
+                >
+                  <option value=""></option>
+                  <option value="British">British</option>
+                  <option value="German">German</option>
+                  <option value="Danish">Danish</option>
+                  <option value="Swedish">Swedish</option>
+                  <option value="Norwegian">Norwegian</option>
+                </select>
+                <br />
+                <select
+                  id="select_drink_house4"
+                  onchange="validate_answer(4, 'drink')"
+                >
+                  <option value=""></option>
+                  <option value="Water">Water</option>
+                  <option value="Coffe">Coffe</option>
+                  <option value="Beer">Beer</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Tea">Tea</option>
+                </select>
+                <br />
+                <select
+                  id="select_cigarette_house4"
+                  onchange="validate_answer(4, 'cigarette')"
+                >
+                  <option value=""></option>
+                  <option value="Blends">Blends</option>
+                  <option value="Dunhill">Dunhill</option>
+                  <option value="Pall Mall">Pall Mall</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Blue Master">Blue Master</option>
+                </select>
+                <br />
+                <select
+                  id="select_animals_house4"
+                  onchange="validate_answer(4, 'animals')"
+                >
+                  <option value=""></option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Horses">Horses</option>
+                  <option value="Birds">Birds</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Cats">Cats</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="house">
+              <h3 class="tittle">5° House</h3>
+              <hr />
+              <hr class="vertical" />
+              <div id="house5" class="house-elements">
+                <select
+                  id="select_color_house5"
+                  onchange="validate_answer(5, 'color')"
+                >
+                  <option value=""></option>
+                  <option value="#6ED4EB">Blue</option>
+                  <option value="#5FEF98">Green</option>
+                  <option value="#EFEA70">Yellow</option>
+                  <option value="#F36D6D">Red</option>
+                  <option value="White">White</option>
+                </select>
+                <br />
+                <select
+                  id="select_nationality_house5"
+                  onchange="validate_answer(5, 'nationality')"
+                >
+                  <option value=""></option>
+                  <option value="British">British</option>
+                  <option value="German">German</option>
+                  <option value="Danish">Danish</option>
+                  <option value="Swedish">Swedish</option>
+                  <option value="Norwegian">Norwegian</option>
+                </select>
+                <br />
+                <select
+                  id="select_drink_house5"
+                  onchange="validate_answer(5, 'drink')"
+                >
+                  <option value=""></option>
+                  <option value="Water">Water</option>
+                  <option value="Coffe">Coffe</option>
+                  <option value="Beer">Beer</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Tea">Tea</option>
+                </select>
+                <br />
+                <select
+                  id="select_cigarette_house5"
+                  onchange="validate_answer(5, 'cigarette')"
+                >
+                  <option value=""></option>
+                  <option value="Blends">Blends</option>
+                  <option value="Dunhill">Dunhill</option>
+                  <option value="Pall Mall">Pall Mall</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Blue Master">Blue Master</option>
+                </select>
+                <br />
+                <select
+                  id="select_animals_house5"
+                  onchange="validate_answer(5, 'animals')"
+                >
+                  <option value=""></option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Horses">Horses</option>
+                  <option value="Birds">Birds</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Cats">Cats</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-hints">
+      <div class="container">
+        <div class="content">
+          <div class="row">
+            <p id="hint1">The British lives in the Red house</p>
+            <p id="hint2">The Swedish keeps Dogs as pets</p>
+            <p id="hint3">The Danish drinks Tea</p>
+            <p id="hint4">
+              The Green house is exactly to the left of the White house
+            </p>
+            <p id="hint5">The owner of the Green house drinks Coffe</p>
+            <p id="hint6">The one who smokes Pall Mall raise Birds</p>
+            <p id="hint7">The owner of the Yellow house smokes Dunhill</p>
+            <p id="hint8">The man who lives in the centre house drinks Milk</p>
+          </div>
+          <div class="row">
+            <p id="hint9">The Norwegian lives in the first house</p>
+            <p id="hint10">
+              The man who smokes Blends lives next to the one who raise Cats
+            </p>
+            <p id="hint11">
+              The man who keeps Horses lives next to the man who smokes Dunhill
+            </p>
+            <p id="hint12">The man who smokes Blue Master drinks Beer</p>
+            <p id="hint13">The German smokes Prince</p>
+            <p id="hint14">The Norwegian lives next to the Blue house</p>
+            <p id="hint15">
+              The man who smokes Blends has a neighbour who drinks Water
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/einstein's_riddle.js"></script>
+    <script src="src/validation.js"></script>
+  </body>
+</html>
+<script>
+  verifyAuthentication();
+</script>
