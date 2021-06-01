@@ -33,13 +33,23 @@ h2 {
   flex-direction: column;
 }
 
+.register-content {
+  padding-top: 10%;
+  font-size: 18px;
+  flex-direction: column;
+}
+
+.register-content form {
+  padding-top: 20px;
+}
+
 form {
   padding-top: 50px;
 }
 
-.login-content input {
+input {
   margin: 8px;
-  height: 50px;
+  height: 45px;
   width: 60%;
   padding-left: 10px;
   text-transform: uppercase;
@@ -51,13 +61,28 @@ form {
   letter-spacing: 0.03rem;
 }
 
-.login-content input:focus {
+select{
+  outline: none;
+  margin-top: 8px;
+  height: 45px;
+  width: 64%;
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  font-size: 12px;
+  background: rgb(240, 240, 240);
+  border-radius: 3px;
+  border: 2px solid transparent;
+  letter-spacing: 0.03rem;
+}
+
+input:focus {
   background: rgb(255, 255, 255);
   border: 2px solid rgb(0, 0, 0);
 }
 
 button {
-  margin-top: 50px;
+  margin-top: 40px;
   background-color: rgb(62, 238, 179);
   font-family: "Raleway";
   border: none;
@@ -70,7 +95,7 @@ button:hover {
 }
 
 .redirect {
-  padding-top: 140px;
+  padding-top: 100px;
 }
 
 a {
@@ -85,7 +110,16 @@ a:hover {
 }
 
 .invalid {
-  font-size: 12px;
+  margin-top: 30px;
+  font-size: 14px;
   color: rgb(226, 114, 114);
 }
 
+.register-content button {
+  margin-top: 20px;
+  background-color: rgb(62, 238, 179);
+  font-family: "Raleway";
+  border: none;
+  padding: 8px 40px;
+  font-size: 15px;
+}

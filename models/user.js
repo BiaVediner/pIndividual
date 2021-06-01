@@ -1,4 +1,4 @@
-	'use strict';
+'use strict';
 
 /* 
 lista e explicação dos Datatypes:
@@ -25,6 +25,11 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		username: {
 			field: 'username',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		gender: {
+			field: 'gender',
 			type: DataTypes.STRING,
 			allowNull: false
 		}

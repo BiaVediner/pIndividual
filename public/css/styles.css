@@ -37,6 +37,7 @@ body {
 }
 
 .right {
+  margin-top: 9px;
   flex: 1;
 }
 
@@ -52,7 +53,7 @@ body {
   margin-right: 10px;
 }
 
-.left button a {
+button a {
   color: black;
 }
 
@@ -87,7 +88,10 @@ body {
 
 .curiosity {
   margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
   background-color: rgb(245, 245, 245);
+  box-shadow: 0 0 .5em rgb(65, 65, 65);
   text-align: center;
 }
 
@@ -99,7 +103,7 @@ body {
 
 .indications {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px
 }
 
@@ -117,8 +121,21 @@ body {
 }
 
 .curiosity-text {
-  width: 30%;
+  width: 80%;
   margin: auto;
+  padding-top: 10px;
+}
+
+
+.curiosity-text img {
+  height: 230px;
+}
+
+.curiosity-text p {
+  margin-top: 0;
+  text-align: left;
+  margin-left: 30px;
+  width: 80%;
 }
 
 .indications-text a:hover{

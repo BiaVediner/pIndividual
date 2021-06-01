@@ -4,436 +4,435 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/teste.css" />
+    <title>Cluster || Sudoku</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="shortcut icon" href="img/logo_branco.svg" type="image/x-icon" />
   </head>
   <body>
-    <table class="dad">
-      <tbody>
-        <tr>
-          <td class="quadrado">
-            <table>
+    <div class="header-games">
+      <div class="container">
+        <div class="content">
+          <div class="left">
+            <input type="checkbox" id="check" />
+            <label for="check" class="nav-label">Profile</label>
+            <a href="games_hub.html"><label>Games</label></a>
+            <div class="nav">
+              <ul>
+                <li><img id="img_user"></li>
+                <hr>
+                <li>Hey, <b id="b_user"></b></li>
+                <li>Your Score: <b id="b_score"></b></li>
+                <li><b id="b_sentence"></b></li>
+                <li class="last-li" onclick="singOut()">Sign Out</li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <div class="logo">
+              <h2>Game's Station</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="div_congratulations" class="congratulations-text">
+      <h2>Congratulations!!</h2>
+      <p>You solved this sudoku</p>
+      <p>You can also play <a href="sudoku.html">Sudoku</a> and <a href="kyudoku.html">Kyudoku</a></p>
+      <p>Need help? Send an email to cluster@gmail.com</p>
+    </div>
+
+    <div class="sudoku-box">
+      <div class="container">
+        <div class="content">
+          <div class="context-box">
+            <h2>How to play Sudoku</h2>
+            <ul>
+              <li>
+                Select an empty cell and choose a number from 1 to 9 to fill it;
+              </li>
+              <li>
+                The objective is to fill all the cells following these three basic rules:
+                <ul>
+                  <li>Don't repeat the numbers in the same row;</li>
+                  <li>Don't repeat the numbers in the same column;</li>
+                  <li>Don't repeat the numbers in the same subgrid (3x3 box).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sudoku-square">
+            <table class="parent">
               <tbody>
                 <tr>
-                  <td id="td_1_1">
-                    <input
-                      id="in_1_1"
-                      onkeyup="verifyAnswer(1, 1)"
-                      maxlength="1"
-                    />
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_1_1">
+                            <input
+                              id="in_1_1"
+                              onkeyup="verifyAnswer(1, 1)"
+                              maxlength="1"
+                            />
+                          </td>
+                          <td id="td_1_2">
+                            <input
+                              id="in_1_2"
+                              onkeyup="verifyAnswer(1, 2)"
+                              maxlength="1"
+                            />
+                          </td>
+                          <td id="td_1_3">7</td>
+                        </tr>
+                        <tr>
+                          <td id="td_2_1">
+                            <input id="in_2_1" onkeyup="verifyAnswer(2, 1)" />
+                          </td>
+                          <td id="td_2_2">9</td>
+                          <td id="td_2_3">3</td>
+                        </tr>
+                        <tr>
+                          <td id="td_3_1">5</td>
+                          <td id="td_3_2">8</td>
+                          <td id="td_3_3">6</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
-                  <td id="td_1_2">
-                    <input
-                      id="in_1_2"
-                      onkeyup="verifyAnswer(1, 2)"
-                      maxlength="1"
-                    />
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_1_4"> <input
+                            id="in_1_4"
+                            onkeyup="verifyAnswer(1, 4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_1_5">9</td>
+                          <td id="td_1_6">8</td>
+                        </tr>
+                        <tr>
+                          <td id="td_2_4"><input
+                            id="in_2_4"
+                            onkeyup="verifyAnswer(2, 4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_2_5">5</td>
+                          <td id="td_2_6"><input
+                            id="in_2_6"
+                            onkeyup="verifyAnswer(2, 6)"
+                            maxlength="1"
+                          /></td>
+                        </tr>
+                        <tr>
+                          <td id="td_3_4">
+                            <input
+                            id="in_3_4"
+                            onkeyup="verifyAnswer(3, 4)"
+                            maxlength="1"
+                          />
+                          </td>
+                          <td id="td_3_5">4</td>
+                          <td id="td_3_6">
+                            <input
+                            id="in_3_6"
+                            onkeyup="verifyAnswer(3, 6)"
+                            maxlength="1"
+                          />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
-                  <td id="td_1_3">7</td>
-                </tr>
-                <tr>
-                  <td id="td_2_1">
-                    <input id="in_2_1" onkeyup="verifyAnswer(2, 1)" />
-                  </td>
-                  <td id="td_2_2">9</td>
-                  <td id="td_2_3">3</td>
-                </tr>
-                <tr>
-                  <td id="td_3_1">5</td>
-                  <td id="td_3_2">8</td>
-                  <td id="td_3_3">6</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_1_4"> <input
-                    id="in_1_4"
-                    onkeyup="verifyAnswer(1, 4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_1_5">9</td>
-                  <td id="td_1_6">8</td>
-                </tr>
-                <tr>
-                  <td id="td_2_4"><input
-                    id="in_2_4"
-                    onkeyup="verifyAnswer(2, 4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_2_5">5</td>
-                  <td id="td_2_6"><input
-                    id="in_2_6"
-                    onkeyup="verifyAnswer(2, 6)"
-                    maxlength="1"
-                  /></td>
-                </tr>
-                <tr>
-                  <td id="td_3_4">
-                    <input
-                    id="in_3_4"
-                    onkeyup="verifyAnswer(3, 4)"
-                    maxlength="1"
-                  />
-                  </td>
-                  <td id="td_3_5">4</td>
-                  <td id="td_3_6">
-                    <input
-                    id="in_3_6"
-                    onkeyup="verifyAnswer(3, 6)"
-                    maxlength="1"
-                  />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_1_7">5</td>
-                  <td id="td_1_8">6</td>
-                  <td id="td_1_9">
-                    <input
-                    id="in_1_9"
-                    onkeyup="verifyAnswer(1, 9)"
-                    maxlength="1"
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="td_2_7">2</td>
-                  <td id="td_2_8">4</td>
-                  <td id="td_2_9">8</td>
-                </tr>
-                <tr>
-                  <td id="td_3_7" ><input
-                    id="in_3_7"
-                    onkeyup="verifyAnswer(3, 9)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_3_8" ><input
-                    id="in_3_8"
-                    onkeyup="verifyAnswer(3, 9)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_3_9">3</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_4_1">2</td>
-                  <td id="td_4_2">3</td>
-                  <td id="td_4_3">8</td>
-                </tr>
-                <tr>
-                  <td id="td_5_1"><input
-                    id="in_5_1"
-                    onkeyup="verifyAnswer(5,1)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_5_2"><input
-                    id="in_5_2"
-                    onkeyup="verifyAnswer(5,2)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_5_3">1</td>
-                </tr>
-                <tr>
-                  <td id="td_6_1">7</td>
-                  <td id="td_6_2"><input
-                    id="in_6_2"
-                    onkeyup="verifyAnswer(6,2)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_6_3"><input
-                    id="in_6_3"
-                    onkeyup="verifyAnswer(6,3)"
-                    maxlength="1"
-                  /></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_4_4">4</td>
-                  <td id="td_4_5"><input
-                    id="in_4_5"
-                    onkeyup="verifyAnswer(4,5)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_4_6">5</td>
-                </tr>
-                <tr>
-                  <td id="td_5_4"><input
-                    id="in_5_4"
-                    onkeyup="verifyAnswer(5,4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_5_5"><input
-                    id="in_5_5"
-                    onkeyup="verifyAnswer(5,5)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_5_6">
-                    <input
-                    id="in_5_6"
-                    onkeyup="verifyAnswer(5,6)"
-                    maxlength="1"
-                  />
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_1_7">5</td>
+                          <td id="td_1_8">6</td>
+                          <td id="td_1_9">
+                            <input
+                            id="in_1_9"
+                            onkeyup="verifyAnswer(1, 9)"
+                            maxlength="1"
+                          />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="td_2_7">2</td>
+                          <td id="td_2_8">4</td>
+                          <td id="td_2_9">8</td>
+                        </tr>
+                        <tr>
+                          <td id="td_3_7" ><input
+                            id="in_3_7"
+                            onkeyup="verifyAnswer(3, 7)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_3_8" ><input
+                            id="in_3_8"
+                            onkeyup="verifyAnswer(3, 8)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_3_9">3</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
                 </tr>
                 <tr>
-                  <td id="td_6_4"><input
-                    id="in_6_4"
-                    onkeyup="verifyAnswer(6,4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_6_5">1</td>
-                  <td id="td_6_6">2</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_4_7">7</td>
-                  <td id="td_4_8">1</td>
-                  <td id="td_4_9">9</td>
-                </tr>
-                <tr>
-                  <td id="td_5_7"><input
-                    id="in_5_7"
-                    onkeyup="verifyAnswer(5,7)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_5_8">5</td>
-                  <td id="td_5_9"><input
-                    id="in_5_9"
-                    onkeyup="verifyAnswer(5,9)"
-                    maxlength="1"
-                  /></td>
-                </tr>
-                <tr>
-                  <td id="td_6_7">
-                    <input
-                    id="in_6_7"
-                    onkeyup="verifyAnswer(6,7)"
-                    maxlength="1"
-                  />
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_4_1">2</td>
+                          <td id="td_4_2">3</td>
+                          <td id="td_4_3">8</td>
+                        </tr>
+                        <tr>
+                          <td id="td_5_1"><input
+                            id="in_5_1"
+                            onkeyup="verifyAnswer(5,1)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_5_2"><input
+                            id="in_5_2"
+                            onkeyup="verifyAnswer(5,2)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_5_3">1</td>
+                        </tr>
+                        <tr>
+                          <td id="td_6_1">7</td>
+                          <td id="td_6_2"><input
+                            id="in_6_2"
+                            onkeyup="verifyAnswer(6,2)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_6_3"><input
+                            id="in_6_3"
+                            onkeyup="verifyAnswer(6,3)"
+                            maxlength="1"
+                          /></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
-                  <td id="td_6_8">3</td>
-                  <td id="td_6_9">6</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_7_1">
-                    <input
-                    id="in_7_1"
-                    onkeyup="verifyAnswer(7,1)"
-                    maxlength="1"
-                  />
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_4_4">4</td>
+                          <td id="td_4_5"><input
+                            id="in_4_5"
+                            onkeyup="verifyAnswer(4,5)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_4_6">5</td>
+                        </tr>
+                        <tr>
+                          <td id="td_5_4"><input
+                            id="in_5_4"
+                            onkeyup="verifyAnswer(5,4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_5_5"><input
+                            id="in_5_5"
+                            onkeyup="verifyAnswer(5,5)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_5_6">
+                            <input
+                            id="in_5_6"
+                            onkeyup="verifyAnswer(5,6)"
+                            maxlength="1"
+                          />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td id="td_6_4"><input
+                            id="in_6_4"
+                            onkeyup="verifyAnswer(6,4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_6_5">1</td>
+                          <td id="td_6_6">2</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </td>
-                  <td id="td_7_2">1</td>
-                  <td id="td_7_3">9</td>
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_4_7">7</td>
+                          <td id="td_4_8">1</td>
+                          <td id="td_4_9">9</td>
+                        </tr>
+                        <tr>
+                          <td id="td_5_7"><input
+                            id="in_5_7"
+                            onkeyup="verifyAnswer(5,7)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_5_8">5</td>
+                          <td id="td_5_9"><input
+                            id="in_5_9"
+                            onkeyup="verifyAnswer(5,9)"
+                            maxlength="1"
+                          /></td>
+                        </tr>
+                        <tr>
+                          <td id="td_6_7">
+                            <input
+                            id="in_6_7"
+                            onkeyup="verifyAnswer(6,7)"
+                            maxlength="1"
+                          />
+                          </td>
+                          <td id="td_6_8">3</td>
+                          <td id="td_6_9">6</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
                 </tr>
                 <tr>
-                  <td id="td_8_1"><input
-                    id="in_8_1"
-                    onkeyup="verifyAnswer(8,1)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_8_2"><input
-                    id="in_8_2"
-                    onkeyup="verifyAnswer(8,2)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_8_3">2</td>
-                </tr>
-                <tr>
-                  <td id="td_9_1"><input
-                    id="in_9_1"
-                    onkeyup="verifyAnswer(9,1)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_9_2">7</td>
-                  <td id="td_9_3">4</td>
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_7_1">
+                            <input
+                            id="in_7_1"
+                            onkeyup="verifyAnswer(7,1)"
+                            maxlength="1"
+                          />
+                          </td>
+                          <td id="td_7_2">1</td>
+                          <td id="td_7_3">9</td>
+                        </tr>
+                        <tr>
+                          <td id="td_8_1"><input
+                            id="in_8_1"
+                            onkeyup="verifyAnswer(8,1)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_8_2"><input
+                            id="in_8_2"
+                            onkeyup="verifyAnswer(8,2)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_8_3">2</td>
+                        </tr>
+                        <tr>
+                          <td id="td_9_1"><input
+                            id="in_9_1"
+                            onkeyup="verifyAnswer(9,1)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_9_2">7</td>
+                          <td id="td_9_3">4</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_7_4"><input
+                            id="in_7_4"
+                            onkeyup="verifyAnswer(7,4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_7_5"><input
+                            id="in_7_5"
+                            onkeyup="verifyAnswer(7,5)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_7_6"><input
+                            id="in_7_6"
+                            onkeyup="verifyAnswer(7,6)"
+                            maxlength="1"
+                          /></td>
+                        </tr>
+                        <tr>
+                          <td id="td_8_4"><input
+                            id="in_8_4"
+                            onkeyup="verifyAnswer(8,4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_8_5">7</td>
+                          <td id="td_8_6">6</td>
+                        </tr>
+                        <tr>
+                          <td id="td_9_4"><input
+                            id="in_9_4"
+                            onkeyup="verifyAnswer(9,4)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_9_5">3</td>
+                          <td id="td_9_6">9</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td class="square">
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td id="td_7_7"><input
+                            id="in_7_7"
+                            onkeyup="verifyAnswer(7,7)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_7_8">8</td>
+                          <td id="td_7_9">7</td>
+                        </tr>
+                        <tr>
+                          <td id="td_8_7"><input
+                            id="in_8_7"
+                            onkeyup="verifyAnswer(8,7)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_8_8"><input
+                            id="in_8_8"
+                            onkeyup="verifyAnswer(8,8)"
+                            maxlength="1"
+                          /></td>
+                          <td id="td_8_9">4</td>
+                        </tr>
+                        <tr>
+                          <td id="td_9_7">1</td>
+                          <td id="td_9_8">2</td>
+                          <td id="td_9_9"><input
+                            id="in_9_9"
+                            onkeyup="verifyAnswer(9,9)"
+                            maxlength="1"
+                          /></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
                 </tr>
               </tbody>
             </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_7_4"><input
-                    id="in_7_4"
-                    onkeyup="verifyAnswer(7,4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_7_5"><input
-                    id="in_7_5"
-                    onkeyup="verifyAnswer(7,5)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_7_6"><input
-                    id="in_7_6"
-                    onkeyup="verifyAnswer(7,6)"
-                    maxlength="1"
-                  /></td>
-                </tr>
-                <tr>
-                  <td id="td_8_4"><input
-                    id="in_8_4"
-                    onkeyup="verifyAnswer(8,4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_8_5">7</td>
-                  <td id="td_8_6">6</td>
-                </tr>
-                <tr>
-                  <td id="td_9_4"><input
-                    id="in_9_4"
-                    onkeyup="verifyAnswer(9,4)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_9_5">3</td>
-                  <td id="td_9_6">9</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td class="quadrado">
-            <table>
-              <tbody>
-                <tr>
-                  <td id="td_7_7"><input
-                    id="in_7_7"
-                    onkeyup="verifyAnswer(7,7)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_7_8">8</td>
-                  <td id="td_7_9">7</td>
-                </tr>
-                <tr>
-                  <td id="td_8_7"><input
-                    id="in_8_7"
-                    onkeyup="verifyAnswer(8,7)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_8_8"><input
-                    id="in_8_8"
-                    onkeyup="verifyAnswer(8,8)"
-                    maxlength="1"
-                  /></td>
-                  <td id="td_8_9">4</td>
-                </tr>
-                <tr>
-                  <td id="td_9_7">1</td>
-                  <td id="td_9_8">2</td>
-                  <td id="td_9_9"><input
-                    id="in_9_9"
-                    onkeyup="verifyAnswer(9,9)"
-                    maxlength="1"
-                  /></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
   </body>
+  <script src="src/punctuation.js"></script>
+  <script src="src/sudoku.js"></script>
+  <script src="src/validation.js"></script>
 </html>
 <script>
-  var sudoku_answers = [
-    [0, 0, 7, 0, 9, 8, 5, 6, 0],
-    [0, 9, 3, 0, 5, 0, 2, 4, 8],
-    [5, 8, 6, 0, 4, 0, 0, 0, 3],
-    [2, 3, 8, 4, 0, 5, 7, 1, 9],
-    [0, 0, 1, 0, 0, 0, 0, 5, 0],
-    [7, 0, 0, 0, 1, 2, 0, 3, 6],
-    [0, 1, 9, 0, 0, 0, 0, 8, 7],
-    [0, 0, 2, 0, 7, 6, 0, 0, 4],
-    [0, 7, 4, 0, 3, 9, 1, 2, 0]
-  ];
-
-  function verifyAnswer(row_params, column_params) {
-    var answer = Number(
-      document.getElementById(`in_${row_params}_${column_params}`).value
-    );
-
-    for (let row = 0; row < sudoku_answers.length; row++) {
-      const line = sudoku_answers[row];
-
-      if (row == row_params - 1) {
-        for (let i = 0; i < line.length; i++) {
-          const element = line[i];
-
-          if (element == answer) {
-            for (let index = 0; index < line.length; index++) {
-              var htmlField = document.getElementById(
-                `td_${row_params}_${index + 1}`
-              );
-              htmlField.style.backgroundColor = "red";
-            }
-            break
-          } else {
-            for (let index = 0; index < line.length; index++) {
-              var htmlField = document.getElementById(
-                `td_${row_params}_${index + 1}`
-              );
-              htmlField.style.backgroundColor = "white";
-            }
-          }
-        }
-      }
-
-      for (let column = 0; column < sudoku_answers[row].length; column++) {
-        const element_column = sudoku_answers[row][column];
-        if (column == column_params - 1) {
-          if (element_column == answer) {
-            for (let index = 0; index < sudoku_answers[row].length; index++) {
-              var htmlField = document.getElementById(
-                `td_${index + 1}_${column_params}`
-              );
-              htmlField.style.backgroundColor = "red";
-            }
-            break;
-          } else {
-            for (let index = 0; index < sudoku_answers[row].length; index++) {
-              var htmlField = document.getElementById(
-                `td_${index + 1}_${column_params}`
-              );
-              htmlField.style.backgroundColor = "white";
-            }
-          }
-        }
-      }
-    }
-
-    sudoku_answers[row_params - 1][column_params - 1] = answer;
-  }
+  verifyAuthentication();
 </script>

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-require('dotenv').config()
-
 /**
  * Module dependencies.
  */
+
+require('dotenv').config()
 
 var app = require('../app');
 var debug = require('debug')('pi-ads-2019-2:server');

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cluster || Einstein's Puzzle</title>
     <link rel="stylesheet" href="css/dashboard.css" />
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo_branco.svg" type="image/x-icon" />
   </head>
   <body>
     <div class="header-games">
@@ -18,11 +18,11 @@
             <a href="games_hub.html"><label>Games</label></a>
             <div class="nav">
               <ul>
-                <li><img src="img/woman.svg"></li>
+                <li><img id="img_user"></li>
                 <hr>
                 <li>Hey, <b id="b_user"></b></li>
-                <li>Your Ponctuation: 0</li>
-                <li>OMG! You are a genius</li>
+                <li>Your Score: <b id="b_score"></b></li>
+                <li><b id="b_sentence"></b></li>
                 <li class="last-li" onclick="singOut()">Sign Out</li>
               </ul>
             </div>
@@ -34,6 +34,14 @@
           </div>
         </div>
       </div>
+    </div>
+
+    
+    <div id="div_congratulations" class="congratulations-text">
+      <h2>Congratulations!!</h2>
+      <p>You solved this einstein's riddle</p>
+      <p>You can also play <a href="sudoku.html">Sudoku</a> and <a href="kyudoku.html">Kyudoku</a></p>
+      <p>Need help? Send an email to cluster@gmail.com</p>
     </div>
 
     <div class="game-one-context">
@@ -451,7 +459,7 @@
         </div>
       </div>
     </div>
-
+    <script src="src/punctuation.js"></script>
     <script src="src/einstein's_riddle.js"></script>
     <script src="src/validation.js"></script>
   </body>

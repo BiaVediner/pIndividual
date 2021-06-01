@@ -1,4 +1,6 @@
 let login_user;
+let gender_user;
+let points_user;
 
 function signUp() {
     event.preventDefault();
@@ -31,6 +33,8 @@ function singIn() {
       response.json().then((json) => {
         sessionStorage.login_user_app = json.username; 
         sessionStorage.id_user_app = json.idUser;
+        sessionStorage.gender_user_app = json.gender;
+        sessionStorage.points_user_app = json.points;
 
         window.location.href = "games_hub.html";
       });
@@ -39,6 +43,7 @@ function singIn() {
 
       response.text().then((text) => {
         console.error(text);
+        div_error.innerHTML = text
       });
     }
   });
@@ -51,7 +56,7 @@ function comparePassword() {
   var passConfirmation = document.getElementById("in_password_confirmation").value
 
   if (pass !== passConfirmation) {
-    div_err.innerHTML = "password don't match"
+    div_error.innerHTML = "password don't match"
     return false
   } else {
     signUp()
@@ -74,11 +79,16 @@ function redirectLogin() {
 
 function verifyAuthentication() {
   login_user = sessionStorage.login_user_app;
+  gender_user = sessionStorage.gender_user_app;
+  points_user = sessionStorage.points_user_app;
 
   if(login_user == undefined) {
     redirectLogin()
   } else {
     b_user.innerHTML = login_user;
+    b_score.innerHTML = points_user == "null" ? 0 : points_user
+    img_user.src = gender_user == "feminine" ? "img/woman.svg" : "img/man.svg"
+    showSentence()
     validateSession()
   }
 }

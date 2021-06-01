@@ -4,21 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cluster || Register</title>
     <link rel="stylesheet" href="css/sign.css" />
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo_branco.svg" type="image/x-icon" />
   </head>
   <body>
     <div class="login-container">
-      <div class="login-content">
+      <div class="register-content">
         <h2>Sign up</h2>
-      <form id="form_register" method="post" onsubmit="return comparePassword()">
-          <input type="text" name="username" placeholder="username">
-          <input type="email" name="email" placeholder="email address">
-          <input type="password" id="in_password" name="password" placeholder="password">
-          <input type="password" id="in_password_confirmation" placeholder="confirm password">
-          <br>
-          <div id="div_err" class="invalid"></div>
+        <form
+          id="form_register"
+          method="post"
+          onsubmit="return comparePassword()"
+        >
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            required
+            minlength="4"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="email address"
+            required
+            minlength="8"
+          />
+          <input
+            type="password"
+            id="in_password"
+            name="password"
+            placeholder="password"
+            required
+            minlength="4"
+          />
+          <input
+            type="password"
+            id="in_password_confirmation"
+            placeholder="confirm password"
+            required
+            minlength="4"
+          />
+          <select name="gender">
+            <option hidden>Enter your gender</option>
+            <option value="feminine">Feminine</option>
+            <option value="masculine">Masculine</option>
+          </select>
+          <br />
+          <div id="div_error" class="invalid">&nbsp;</div>
           <button type="submit">Create account</button>
         </form>
       </div>

@@ -1,103 +1,117 @@
-var clicked = 0;
-var count = 0;
+var rows = [
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 2, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0]
+];
 
-var rows = {
-  row1: [0, 0, 0, 0, 0, 0],
-  row2: [0, 0, 0, 0, 2, 0],
-  row3: [0, 0, 0, 0, 0, 0],
-  row4: [0, 0, 0, 0, 0, 0],
-  row5: [0, 0, 0, 0, 0, 0],
-  row6: [0, 0, 0, 0, 0, 0],
-};
+var rows_answer = [
+  [1, 1, 1, 1, 2, 1],
+  [2, 1, 1, 1, 1, 2],
+  [1, 2, 1, 1, 1, 1],
+  [1, 1, 2, 1, 1, 1],
+  [1, 1, 1, 2, 1, 2],
+  [1, 1, 1, 2, 1, 2]
+];
 
-function getValues(row_params, column_params) {
-  switch (row_params) {
-    case 1:
-      hideOrChoose(row_params, rows.row1, column_params);
-      sumRows(row_params, rows.row1);
-      sumColumn(column_params);
-      break;
-    case 2:
-      hideOrChoose(row_params, rows.row2, column_params);
-      sumRows(row_params, rows.row2);
-      sumColumn(column_params);
-      break;
-    case 3:
-      hideOrChoose(row_params, rows.row3, column_params);
-      sumRows(row_params, rows.row3);
-      sumColumn(column_params);
-      break;
-    case 4:
-      hideOrChoose(row_params, rows.row4, column_params);
-      sumRows(row_params, rows.row4);
-      sumColumn(column_params);
-      break;
-    case 5:
-      hideOrChoose(row_params, rows.row5, column_params);
-      sumRows(row_params, rows.row5);
-      sumColumn(column_params);
-      break;
-    case 6:
-      hideOrChoose(row_params, rows.row6, column_params);
-      sumRows(row_params, rows.row6);
-      sumColumn(column_params);
-      break;
-  }
-}
+var sum = 0;
 
-function hideOrChoose(row_params, row_position, column_params) {
+function hideOrChoose(row_params, column_params) {
   var htmlField = document.getElementById(`row${row_params}_${column_params}`);
-  row_position[column_params - 1]++;
+  rows[row_params - 1][column_params - 1]++
 
-  if (row_position[column_params - 1] == 1) {
+  if (rows[row_params - 1][column_params - 1] == 1) {
     htmlField.classList.add("not-this-one");
-  } else if (row_position[column_params - 1] == 2) {
+  } else if (rows[row_params - 1][column_params - 1] == 2) {
     htmlField.classList.remove("not-this-one");
     htmlField.classList.add("this-one");
   } else {
     htmlField.classList.remove("this-one");
-    row_position[column_params - 1] = 0;
+    rows[row_params - 1][column_params - 1] = 0;
   }
+
+  sumRows(row_params);
+  sumColumn(column_params);
 }
 
-function sumRows(row_params, row_position) {
-  var sum = 0;
+function sumRows(row_params) {
+  sum = 0;
 
-  for (count = 0; count < row_position.length; count++) {
-    if (row_position[count] == 2) {
-      var htmlField = Number(
-        document.getElementById(`row${row_params}_${count + 1}`).innerHTML
-      );
-      sum += htmlField;
+  for(let counter = 0; counter < rows.length; counter++) {
+    if(counter == row_params - 1) {
+      for(let i = 0; i < rows[counter].length; i++) {
+        if (rows[counter][i] == 2) {
+          let htmlField = Number(
+            document.getElementById(`row${row_params}_${i + 1}`).innerHTML
+          );
+          sum += htmlField;
+        }
+      }
     }
   }
 
-  for (count = 0; count < row_position.length; count++) {
-    var htmlField = document.getElementById(`row${row_params}_${count + 1}`);
+  let htmlField = document.getElementById(`row${row_params}`);
 
-    if (sum > 9) {
-      htmlField.classList.add("error");
-    } else if(sum <= 9 && htmlField.classList.contains('error')) {
-      htmlField.classList.remove("error");
-    }
+  if (sum > 9) {
+    htmlField.classList.add("error");
+  } else {
+    htmlField.classList.remove("error");
   }
 }
 
 function sumColumn(column_params) {
   var sum = 0;
-  var column = column_params;
+  var column = column_params - 1;
 
-  Object.keys(rows).forEach((row_params) => {
-    var array_row = rows[row_params]
+  for(let counter = 0; counter < rows.length; counter++) {
+    for(let i = 0; i < rows[counter].length; i++) {
+      if(i == column) {
+        if(rows[counter][i] == 2) {
+          let htmlField = document.getElementById(`row${counter+1}_${column + 1}`);
 
-    var htmlField = document.getElementById(`${row_params}_${column}`);
+          sum += Number(htmlField.innerHTML)
+        } 
+      }
+    }
+  }
 
-    if (array_row[column - 1] == 2) {
-      sum += Number(htmlField.innerHTML);
-    }  
+  for(let counter = 0; counter < rows.length; counter++) {
+    for(let i = 0; i < rows[counter].length; i++) {
+      if(i == column) {
+        let htmlField = document.getElementById(`row${counter+1}_${column + 1}`);
+        if(sum > 9) {
+          htmlField.classList.add("error");
+        } else {
+          htmlField.classList.remove("error");
+        }
+      }
+    }
+  }
 
-    if (sum > 9) {
-      htmlField.classList.add("error");
-    } 
-  });
+  compareAnswers()
+}
+
+function compareAnswers() {
+  var points = 0;
+
+  for(let counter = 0; counter < rows_answer.length; counter++) {
+    for(let i = 0; i < rows_answer[counter].length; i++) {
+      
+      if(rows_answer[counter][i] == rows[counter][i]) {
+        points++
+      }
+    }
+  }
+
+  if(points == 36) {
+    getPoints(2)
+
+    div_congratulations.style.display = "block"
+
+    setInterval(() => {
+      div_congratulations.style.display = "none"
+    }, 5000)
+  }
 }

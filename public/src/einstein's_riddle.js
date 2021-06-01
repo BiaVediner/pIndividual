@@ -1,4 +1,3 @@
-
 var house_one = ["Yellow", "Norwegian", "Water", "Dunhill", "Cats"];
 
 var house_two = ["Blue", "Danish", "Tea", "Blends", "Horses"];
@@ -8,8 +7,6 @@ var house_three = ["Red", "British", "Milk", "Pall Mall", "Birds"];
 var house_four = ["Green", "German", "Coffe", "Prince", "Fish"];
 
 var house_five = ["White", "Swedish", "Beer", "Blue Master", "Dogs"];
-
-let idUser;
 
 function change_color(house_element) {
   var color_value = document.getElementById(
@@ -259,37 +256,11 @@ function validate_answer(house_params, labels_params) {
 
   if (check_values(4, 'animals') == "Fish") {
     getPoints(1)
+    div_congratulations.style.display = "block"
+
+    setInterval(() => {
+      div_congratulations.style.display = "none"
+    }, 5000)
   }
 }
 
-function getPoints(id_params) {
-
-  fetch(`/scores/gettingGame/${id_params}`, {cache: 'no-store', method: 'GET'})
-  .then(answer => {
-    if(answer.ok) {
-      answer.text().then(text => {
-        console.log('complete selection :)', text);
-      });
-
-      insertScore()
-    } else {
-      console.error('Something gone wrong :.(');
-    }
-  })
-
-}
-
-function insertScore() {
-  idUser = sessionStorage.id_user_app;
-
-  fetch(`/scores/registerScore/${idUser}`, {cache: 'no-store', method: 'POST'})
-  .then(answer => {
-    if(answer.ok) {
-      answer.text().then(text => {
-        console.log('complete insertion :)', text);
-      });
-    } else {
-      console.error('Something gone wrong :.(');
-    }
-  })
-}

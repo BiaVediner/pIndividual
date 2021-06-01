@@ -1,7 +1,7 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var sequelize = require("../models").sequelize;
-var User = require("../models").User;
+var sequelize = require('../models').sequelize;
+var User = require('../models').User;
 
 let sessions = [];
 
@@ -12,7 +12,11 @@ router.post("/authenticate", function (req, res, next) {
   var username = req.body.username; // depois de .body, use o nome (name) do campo em seu formulário de login
   var password = req.body.password; // depois de .body, use o nome (name) do campo em seu formulário de login
 
-  let instructionSql = `select * from user where username='${username}' and password='${password}'`;
+  let instructionSql = `select user.*, sum(score) as points from user
+	  left join score 
+    on fkUser = idUser
+    where username = '${username}' and password = '${password}';`;
+
   console.log(instructionSql);
 
   sequelize
@@ -22,17 +26,22 @@ router.post("/authenticate", function (req, res, next) {
     .then((result) => {
       console.log(`Found: ${result.length}`);
 
-      if (result.length == 1) {
-        sessions.push(result[0].dataValues.username);
-        console.log("sessions: ", sessions);
-        res.json(result[0]);
-      } else if (result.length == 0) {
+      if(result[0].dataValues.username == null) {
         res.status(403).send("Invalid username and/or password");
       } else {
-        res.status(403).send("More than one user with the same username and password!");
+        if (result.length == 1) {
+          sessions.push(result[0].dataValues.username);
+          console.log("sessions: ", sessions);
+          res.json(result[0]);
+        } else if (result.length == 0) {
+          res.status(403).send("Invalid username and/or password");
+        } else {
+          res.status(403).send("More than one user with the same username and password!");
+        }
       }
     }) 
     .catch((error) => {
+      console.error(error);
       res.status(500).send(error.message);
     });
 });
@@ -45,7 +54,7 @@ router.post("/register", function (req, res, next) {
     email: req.body.email,
     password: req.body.password,
     username: req.body.username,
-    gender: req.body.gender
+    gender: req.body.gender,
   })
     .then((result) => {
       console.log(`Record created	: ${result}`);

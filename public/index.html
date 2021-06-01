@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="shortcut icon" href="img/jupiter.svg" type="image/x-icon" />
+    <title>Cluster</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/logo_branco.svg" type="image/x-icon" />
   </head>
   <body>
     <div class="banner">
@@ -15,7 +14,7 @@
         <div class="content">
           <div class="right">
             <div>
-              <img src="img/logo.svg" />
+              <h2>Cluster</h2>
             </div>
           </div>
           <div class="center">
@@ -59,10 +58,9 @@
             If you identifies with what we show on this website, why don't you
             register and becomes a part of our family? Then you will receive all
             the news from our website, and will be able to play the games
-            developed by our time. With your punctuation you can win a buch of
-            prizes, stay tune to see the prizes that we give!
+            developed by our time!
             <br /><br />
-            <button>Register</button>
+            <button><a href="register.html">Register</a></button>
           </p>
         </div>
       </div>
@@ -73,51 +71,37 @@
         <div class="content">
           <h3
             class="h3-selected"
-            id="theme_paradoxes"
-            onclick="get_text_curiosity('paradoxes')"
+            id="theme_schrödinger"
+            onclick="get_text_curiosity('schrödinger')"
           >
-            <label>Paradoxes</label>
+            <label>Schrödinger's cat</label>
           </h3>
           <h3
             class="content-h3"
-            id="theme_theories"
-            onclick="get_text_curiosity('theories')"
+            id="theme_bootstrap"
+            onclick="get_text_curiosity('bootstrap')"
           >
-            <label>Theories</label>
+            <label>Bootstrap Paradox</label>
           </h3>
           <h3
             class="content-h3"
-            id="theme_basic_concepts"
-            onclick="get_text_curiosity('basic_concepts')"
+            id="theme_fermi"
+            onclick="get_text_curiosity('fermi')"
           >
-            <label>Basic Concepts</label>
+            <label>Fermi Paradox</label>
           </h3>
         </div>
-        <div class="content">
-          <div id="curiosity-content1" class="curiosity-text">
-            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
-              <img src="img/dark-matter.jpg"/>
-            </a>
-            <p>
-              <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
-            </p>
+          <div id="curiosity_content" class="curiosity-text">
+            <div class="content">
+              <img src="img/schrodingers-cat.png"/>
+                <p>
+                  In Schrödinger's mental experiment, a cat is trapped in a box isolated from everything that exists, inside the box there is also a radiation meter and a sample of , if it decays it triggers a mechanism that will kill the cat. This material is in a state of superposition and therefore the cat is also in a state of superposition alive and dead. The moment we open the box, the superposition ends, and we see the cat alive or dead.
+                  <br><br>
+                  This experiment is more a reflection than an explanation, it demonstrates that there are limitations to our knowledge and perhaps our representation of reality does not represent the real world.
+                </p>
+            </div>
           </div>
-          <div id="curiosity-content2" class="indications-text">
-            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
-              <img src="img/dark-matter.jpg"/>
-            </a>
-            <p>
-              Dark Matter is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
-            </p>
-          </div>
-          <div id="curiosity-content3" class="indications-text">
-            <a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
-              <img src="img/dark-matter.jpg"/>
-            </a>
-            <p>
-              Dark Matter is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
-            </p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -153,7 +137,7 @@
               <img src="img/dark-matter.jpg"/>
             </a>
             <p>
-              <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+              <i>Dark Matter</i> is a sci-fi book that deals with several concepts in a simple way that holds your attention
             </p>
           </div>
           <div id="indication-content2" class="indications-text">
@@ -169,7 +153,7 @@
               <img src="img/universe-in-your-hand.jpg"/>
             </a>
             <p>
-              <i>The Universe in your hand</i> a wild tour through the reaches of time and space, from the interior of a proton to the Big Bang to the rough suburbs of a black hole.
+              <i>The Universe in your hand</i> takes you on a wild tour through the reaches of time and space.
             </p>
           </div>
         </div>
@@ -180,19 +164,50 @@
       <div class="container">
         <h4>
           Developed By
-          <a href="https://github.com/BiaVediner">Bianca Vediner</a>
+          <a href="https://github.com/BiaVediner"><label>Bianca Vediner</label></a>
         </h4>
       </div>
     </div>
   </body>
 </html>
 <script>
+  
+  var curiosities = [
+    `<div class="content">
+        <img src="img/schrodingers-cat.png"/>
+        <p>
+          In Schrödinger's mental experiment, a cat is trapped in a box isolated from everything that exists, inside the box there is also a radiation meter and a sample of , if it decays it triggers a mechanism that will kill the cat. This material is in a state of superposition and therefore the cat is also in a state of superposition alive and dead. The moment we open the box, the superposition ends, and we see the cat alive or dead.
+          <br><br>
+          This experiment is more a reflection than an explanation, it demonstrates that there are limitations to our knowledge and perhaps our representation of reality does not represent the real world.
+        </p>
+    </div>`,
+    `<div class="content">
+        <img src="img/bootstrap.jpg"/>
+        <p>
+          Paradox of time travel that occurs when a future event is the cause of a past event, which in turn is the cause of the future event, so this event was never invented, it simply exists. 
+          <br><br>
+          This paradox is addressed in the series Dark, where events are trapped in an infinite loop and it is no longer possible to find their origin...
+        </p>
+    </div>`,
+    `<div class="content">
+        <img src="img/fermi.jpg"/>
+        <p>
+          This paradox asks why in a universe so big and with systems and planets similar to ours we never had contact with other smart lives. There are some possible explanations: 
+          <br>
+          There are no signs of higher civilizations because there are no higher civilizations in existence, which means there’s some stage in that long evolutionary process that is extremely unlikely or impossible for life to get beyond, this is called the great filter and could means that:<br>
+            - We're rare and the great filter is behind us<br>
+            - The Great Filter is Ahead of Us<br>
+          Or there are logical reasons why we might not have heard from superior civilizations...
+        </p>
+    </div>`
+  ]
+
   var books_indications = [
     `<a href="https://www.amazon.com.br/Dark-Matter-Novel-Blake-Crouch/dp/1101904224">
       <img src="img/dark-matter.jpg"/>
     </a>
     <p>
-      <i>Dark Matter</i> is a brilliant science fiction book that addresses topics such as multiverse and even paradoxes like Schrodinger's cat in a simple way that holds your attention
+      <i>Dark Matter</i> is a sci-fi book that deals with several concepts in a simple way that holds your attention
     </p>`,
     `<a href="https://www.amazon.com.br/Sette-brevi-lezioni-fisica-Rovelli/dp/8845929256">
       <img src="img/Sette-brevi-lezioni-di-fisica.jpg"/>
@@ -205,7 +220,7 @@
       <img src="img/universe-in-your-hand.jpg"/>
     </a>
     <p>
-      <i>The Universe in your hand</i> a wild tour through the reaches of time and space, from the interior of a proton to the Big Bang to the rough suburbs of a black hole.
+      <i>The Universe in your hand</i> takes you on a wild tour through the reaches of time and space.
     </p>`,
   ];
 
@@ -232,11 +247,11 @@
   ];
 
   var movies_indications = [
-    `<a href="https://www.netflix.com/title/80117799#:~:text=Uma%20linguista%20encarregada%20de%20encontrar,vida%20e%20a%20do%20mundo.&text=Assista%20o%20quanto%20quiser.">
-      <img src="img/arrival.jpg"/>
+    `<a href="https://www.netflix.com/title/70295172">
+      <img src="img/imitation-game.jpg"/>
     </a>
     <p>
-
+      <i>The Imitation Game</i> tells the story of Alan Turing, a mathematician who solves the "Enigma" by creating a machine to dechiper that code.
     </p>`,
     `<a href="https://globoplay.globo.com/interestelar/t/PFrLHDBYHY/">
       <img src="img/interstellar.jpg"/>
@@ -245,16 +260,17 @@
     <i>Interstellar</i> addresses issues such as wormholes, gravitational dilation of time, unified field theory, black holes, and many other. 
     </p>`,
 
-    `<a href="https://www.youtube.com/user/nerdologia">
-      <img src="img/nerdologia.svg"/>
+    `<a href="https://www.amazon.com/Martian-Matt-Damon/dp/B017S3OP7A">
+      <img src="img/the_martian.jpg"/>
     </a>
     <p>
-      This youtube channel addresses interesting and diverse topics such as the physics of the film Interstellar
+      <i>The Martian</i> depicts a captivating and faithful story of an astronaut who had to survive on mars with few resources.
     </p>`,
   ];
 
   function get_text_curiosity(theme_params) {
-    var themes = ["paradoxes", "theories", "basic_concepts"];
+    var themes = ["schrödinger", "bootstrap", "fermi"];
+    var position_curiosity;
 
     for (var counter = 0; counter < themes.length; counter++) {
       var id_theme = document.getElementById(`theme_${themes[counter]}`);
@@ -271,7 +287,14 @@
       .getElementById(`theme_${theme_params}`)
       .classList.add("h3-selected");
 
-    //alterar os campos de textos que irão aparecer
+    for(let position = 0; position < themes.length; position++) {
+      if(theme_params == themes[position]) {
+        position_curiosity = position;
+        break;
+      }
+    }
+
+    curiosity_content.innerHTML = curiosities[position_curiosity]
   }
 
   function get_text_indication(theme_params) {

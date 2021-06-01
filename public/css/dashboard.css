@@ -6,6 +6,20 @@ body {
   background-color:rgb(241, 241, 241);
 }
 
+.congratulations-text {
+  display: none;
+  box-shadow: 0 0 .5em rgb(65, 65, 65);
+  position: absolute;
+  background-color: rgb(187, 203, 204);
+  padding-top: 50px;
+  height: 200px;
+  width: 30%;
+  text-align: center;
+  margin-left: 33%;
+  margin-top: 10%;
+  z-index:1;
+}
+
 .container {
   width: 80%;
   margin: auto;
@@ -160,11 +174,42 @@ label:hover {
 }
 
 .body-games {
-  background: #010011 url(../img/cube-background.jpg)
+  background: #010011 url(../img/cube-background-nocubo.jpg)
   no-repeat fixed;
   background-size: cover;
   height: 753px;
   color: white;
+}
+
+#cube{
+  position: absolute;
+  height: 400px;
+  margin-left: 760px;
+  margin-top: 150px
+}
+
+#img_kyudoku {
+  position: absolute;
+  height: 105px;
+  margin-left: 780px;
+  margin-top: 175px;
+  cursor: pointer;
+}
+
+#img_einstein {
+  position: absolute;
+  height: 280px;
+  margin-left: 780px;
+  margin-top: 240px;
+  cursor: pointer;
+}
+
+#img_sudoku {
+  position: absolute;
+  height: 300px;
+  margin-left: 900px;
+  margin-top: 225px;
+  cursor: pointer;
 }
 
 .choose-game {
@@ -178,42 +223,48 @@ label:hover {
 }
 
 .kyudoku-game {
-  margin-left: 450px;
-  margin-top: 120px;
-}
-
-.kyudoku {
-  margin-left: 450px;
-  width: 180px;
-  height: 80px;
-  cursor: pointer;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 680px;
 }
 
 .einstein-puzzle-game {
-  margin-top: 50px;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 210px;
 }
 
-.einstein-puzzle {
-  margin-left: 400px;
-  width: 100px;
-  height: 200px;
-  cursor: pointer;
+.sudoku-game {
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 1000px;
 }
-
-.crossword-game {
-  margin-top: 50px;
-  margin-left: 20px;
-}
-
-.crossword {
-  margin-left: 20px;
-  width: 200px;
-  height: 200px;
-  cursor: pointer;
-}
-
 
 /* Kyudoku */ 
+
+.kyudoku-box {
+  margin-top: 5%;
+}
+
+.sudoku-box {
+  margin-top: 5%;
+}
+
+.kyudoku-square {
+  margin-top: 7%;
+  width: 50%;
+}
+
+.sudoku-square {
+  margin: auto;
+  width: 40%;
+}
+
+.context-box {
+  width: 50%;
+  line-height: 30px;
+  font-size: 20px;
+}
 
 table {
   border: 1px solid black;
@@ -223,7 +274,7 @@ table {
 
 td {
   text-align: center;
-  border: 5px solid #000000;
+  border: 3px solid #000000;
   height: 50px;
   width: 50px;
   color: #000000;
@@ -239,7 +290,7 @@ td {
 }
 
 .error {
-  border: 5px solid #db2323;
+  border: 4px solid red;
 }
 
 /* Profile */
@@ -257,9 +308,10 @@ input[type="checkbox"]:checked ~ .nav-games {
 }
 
 .nav {
+  margin-top: 28px;
   background-color: #fafafa;
   width: 350px;
-  height: 91vh;
+  height: 87.5vh;
   left: -350px;
   position: absolute;
   transition: all .5s;
@@ -267,9 +319,10 @@ input[type="checkbox"]:checked ~ .nav-games {
 }
 
 .nav-games {
-  background-color: #fafafa00;
+  margin-top: 28px;
+  background-color: #fafafa17;
   width: 350px;
-  height: 91vh;
+  height: 87.5vh;
   left: -350px;
   position: absolute;
   transition: all .5s;
@@ -323,7 +376,58 @@ input[type="checkbox"]:checked ~ .nav-games {
 
 .last-li {
   margin-left: 50px;
-  margin-top: 250px;
+  margin-top: 200px;
   text-align: left;
   cursor: pointer;
+}
+
+/*Sudoku*/
+
+.parent {
+  width: 50%;
+  margin: auto;
+}
+
+.sudoku-box table {
+  border: 1px solid rgb(0, 0, 0);
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  padding: 0;
+}
+
+.sudoku-square td {
+  text-align: center;
+  border: 0 solid #363636;
+  height: 50px;
+  width: 50px;
+  color: #000000;
+  font-size: 20px;
+}
+
+.square td {
+  text-align: center;
+  border: 3px solid #474747;
+  height: 50px;
+  width: 5  0px;
+  color: #000000;
+  font-size: 20px;
+  padding: 0;
+}
+
+.sudoku-square input {
+  background-color: transparent;
+  height: 100%;
+  width: 80%;
+  outline: none;
+  padding: 0;
+  border: transparent;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
 }
